@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Happy 22nd Birthday 💗</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, #ffd1dc 0%, #ff69b4 100%);
+        min-height: 100vh;
+      }
+
+      /* ========== INTRO SCENE ========== */
+      .intro-scene {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #ffd6e0 0%,
+          #ff9ebb 50%,
+          #ff7aa2 100%
+        );
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        animation: fadeOut 1s 3s forwards;
+      }
+
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+
+      .intro-text {
+        font-size: clamp(2rem, 8vw, 5rem);
+        font-weight: 800;
+        color: white;
+        text-align: center;
+        animation: scaleIn 1s ease-out;
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        margin-bottom: 2rem;
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .intro-emoji {
+        font-size: 5rem;
+        animation: bounce 1s infinite alternate;
+      }
+
+      @keyframes bounce {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-30px);
+        }
+      }
+
+      /* ========== PARTICLES ========== */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: radial-gradient(circle, #fff 0%, transparent 70%);
+        border-radius: 50%;
+        animation: float linear infinite;
+        opacity: 0.6;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.6;
+        }
+        90% {
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* ========== MAIN CONTAINER ========== */
+      .main-container {
+        position: relative;
+        min-height: 100vh;
+        padding: 2rem;
+        z-index: 2;
+      }
+
+      /* ========== LANDING PAGE ========== */
+      .landing-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
+
+      .main-title {
+        font-size: clamp(3rem, 10vw, 7rem);
+        font-weight: 800;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #ffe4f0 35%,
+          #ffd1e0 65%,
+          #ffffff 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        animation: titleGlow 3s ease-in-out infinite alternate;
+        filter: drop-shadow(0 5px 20px rgba(255, 255, 255, 0.8));
+        line-height: 1.2;
+      }
+
+      @keyframes titleGlow {
+        from {
+          filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.5));
+        }
+        to {
+          filter: drop-shadow(0 0 40px rgba(255, 105, 180, 0.9));
+        }
+      }
+
+      .subtitle {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        color: white;
+        margin-bottom: 3rem;
+        animation: fadeInUp 1s 0.5s both;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        animation: fadeInUp 1s 0.8s both;
+      }
+
+      .magic-button {
+        position: relative;
+        padding: 1.5rem 3rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(
+          135deg,
+          #ffd6e0 0%,
+          #ff9ebb 50%,
+          #ff7aa2 100%
+        );
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 40px rgba(255, 107, 157, 0.4);
+      }
+
+      .magic-button:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .magic-button:hover:before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .magic-button:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 50px rgba(255, 107, 157, 0.6);
+      }
+
+      .magic-button span {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ========== OPEN WHEN LETTERS ========== */
+      .letters-page {
+        display: none;
+        min-height: 100vh;
+        padding-top: 5rem;
+      }
+
+      .letters-page.active {
+        display: block;
+        animation: slideIn 0.6s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .page-title {
+        font-size: clamp(2.5rem, 7vw, 5rem);
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+        text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .page-subtitle {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .back-button {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        padding: 1rem 2rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 100;
+      }
+
+      .back-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateX(-5px);
+      }
+
+      .letters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .letter-card {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(255, 182, 193, 0.95) 100%
+        );
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 2rem;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        animation: cardSlideIn 0.6s ease-out backwards;
+      }
+
+      @keyframes cardSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .letter-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .letter-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .letter-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .letter-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .letter-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .letter-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      .letter-card:nth-child(7) {
+        animation-delay: 0.7s;
+      }
+      .letter-card:nth-child(8) {
+        animation-delay: 0.8s;
+      }
+      .letter-card:nth-child(9) {
+        animation-delay: 0.9s;
+      }
+      .letter-card:nth-child(10) {
+        animation-delay: 1s;
+      }
+
+      .letter-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+      }
+
+      .letter-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: envelopeFloat 3s ease-in-out infinite;
+      }
+
+      @keyframes envelopeFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-5deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(5deg);
+        }
+      }
+
+      .letter-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #c71585;
+        margin-bottom: 0.5rem;
+      }
+
+      /* ========== MODAL ========== */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .modal.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-content {
+        background: linear-gradient(135deg, #fff 0%, #ffe4e9 100%);
+        border-radius: 30px;
+        padding: 3rem;
+        max-width: 700px;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 30px 90px rgba(255, 105, 180, 0.4);
+        animation: modalSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      @keyframes modalSlideIn {
+        from {
+          opacity: 0;
+          transform: scale(0.7) translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #ff6b9d, #c471ed);
+        border: none;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .modal-close:hover {
+        transform: rotate(90deg) scale(1.1);
+      }
+
+      .modal-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .modal-emoji {
+        font-size: 4rem;
+        animation: heartBeat 1.5s ease-in-out infinite;
+      }
+
+      @keyframes heartBeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        10%,
+        30% {
+          transform: scale(0.9);
+        }
+        20%,
+        40% {
+          transform: scale(1.1);
+        }
+      }
+
+      .modal-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #ff1493;
+        margin-top: 1rem;
+      }
+
+      .modal-message {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        white-space: pre-line;
+      }
+
+      /* ========== JAR OF REASONS ========== */
+      .jar-page {
+        display: none;
+        min-height: 100vh;
+        padding-top: 5rem;
+      }
+
+      .jar-page.active {
+        display: block;
+        animation: slideIn 0.6s ease-out;
+      }
+
+      .jar-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .jar-visual {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        height: 480px; /* Reduced from 500px */
+        margin: 0 auto 3rem;
+        cursor: pointer;
+        animation: fadeInUp 1s 0.5s both;
+      }
+
+      .jar-body {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 350px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 192, 203, 0.4) 0%,
+          rgba(255, 182, 193, 0.6) 50%,
+          rgba(255, 192, 203, 0.4) 100%
+        );
+        border-radius: 20px 20px 40px 40px;
+        backdrop-filter: blur(10px);
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3),
+          inset 0 0 60px rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .jar-body:hover {
+        transform: translateX(-50%) scale(1.05);
+        box-shadow: 0 30px 80px rgba(255, 105, 180, 0.5),
+          inset 0 0 80px rgba(255, 255, 255, 0.3);
+      }
+
+      .jar-lid {
+        position: absolute;
+        top: 84px; /* Reduced from 94px to move lid closer to instruction */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 310px;
+        height: 50px;
+        background: linear-gradient(135deg, #ff69b4, #ff1493);
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        z-index: 10;
+      }
+      .jar-lid:after {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 35px;
+        background: linear-gradient(135deg, #ff1493, #c71585);
+        border-radius: 40px 40px 0 0;
+        box-shadow: 0 -5px 15px rgba(255, 20, 147, 0.3);
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-bottom: none;
+      }
+
+      /* Lid rim to cover the connection */
+      .jar-lid:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(135deg, #ff1493, #c71585);
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 3px 10px rgba(255, 20, 147, 0.5);
+      }
+
+      .jar-notes {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .note-piece {
+        width: 45px;
+        height: 55px;
+        background: linear-gradient(135deg, #fff 0%, #ffe4e9 100%);
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        animation: noteFloat 3s ease-in-out infinite;
+        animation-delay: calc(var(--i) * 0.1s);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Add handwritten lines effect */
+      .note-piece:before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 6px;
+        right: 6px;
+        height: 2px;
+        background: linear-gradient(90deg, #ff69b4 0%, transparent 100%);
+        opacity: 0.4;
+      }
+
+      .note-piece:after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 6px;
+        right: 10px;
+        height: 35px;
+        background: repeating-linear-gradient(
+          transparent,
+          transparent 5px,
+          rgba(255, 105, 180, 0.3) 5px,
+          rgba(255, 105, 180, 0.3) 6px
+        );
+      }
+
+      @keyframes noteFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-18px) rotate(15deg);
+        }
+      }
+
+      .jar-label {
+        position: absolute;
+        bottom: -70px; /* Increased from -50px to give more space */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+      }
+
+      .jar-instruction {
+        text-align: center;
+        font-size: 1.2rem;
+        color: white;
+        margin-bottom: 1rem; /* Reduced from 2rem */
+      }
+
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .reason-card {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 182, 193, 0.9) 100%
+        );
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 1.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        opacity: 0.5;
+        filter: blur(3px);
+      }
+
+      .reason-card.revealed {
+        opacity: 1;
+        filter: blur(0);
+        animation: cardReveal 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      @keyframes cardReveal {
+        from {
+          opacity: 0;
+          transform: scale(0.8) rotateY(90deg);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) rotateY(0);
+        }
+      }
+
+      .reason-card.revealed:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+      }
+
+      .reason-number {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .reason-title {
+        font-weight: 700;
+        color: #ff1493;
+        margin-bottom: 0.5rem;
+      }
+
+      .reason-text {
+        color: #333;
+        line-height: 1.6;
+        display: none;
+      }
+
+      .reason-card.revealed .reason-text {
+        display: block;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .button-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .magic-button {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .letters-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-content {
+          padding: 2rem;
+        }
+
+        .jar-visual {
+          height: 450px; /* Adjusted */
+        }
+
+        .jar-body {
+          width: 250px;
+          height: 300px;
+        }
+
+        .jar-lid {
+          width: 260px;
+          top: 64px; /* Adjusted for mobile */
+        }
+
+        .jar-label {
+          bottom: -60px;
+        }
+      }
+
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .reason-card {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 182, 193, 0.9) 100%
+        );
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 1.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        opacity: 0.5;
+        filter: blur(3px);
+      }
+
+      .reason-card.revealed {
+        opacity: 1;
+        filter: blur(0);
+        animation: cardReveal 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      @keyframes cardReveal {
+        from {
+          opacity: 0;
+          transform: scale(0.8) rotateY(90deg);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) rotateY(0);
+        }
+      }
+
+      .reason-card.revealed:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+      }
+
+      .reason-number {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .reason-title {
+        font-weight: 700;
+        color: #ff1493;
+        margin-bottom: 0.5rem;
+      }
+
+      .reason-text {
+        color: #333;
+        line-height: 1.6;
+        display: none;
+      }
+
+      .reason-card.revealed .reason-text {
+        display: block;
+      }
+
+      /* ========== CONFETTI ========== */
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background: #ff69b4;
+        position: fixed;
+        top: -10px;
+        z-index: 9999;
+        animation: confettiFall 3s linear;
+      }
+
+      @keyframes confettiFall {
+        to {
+          transform: translateY(100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .button-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .magic-button {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .letters-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-content {
+          padding: 2rem;
+        }
+
+        .jar-body {
+          width: 250px;
+          height: 300px;
+        }
+
+        .jar-lid {
+          width: 270px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Intro Screen -->
+    <div class="intro-scene">
+      <div class="intro-text">Happy Birthday! 🎉</div>
+      <div class="intro-emoji">💗</div>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Landing Page -->
+      <div class="landing-page" id="landingPage">
+        <h1 class="main-title">Happy 22nd Birthday!!!</h1>
+        <p class="subtitle">Here's a little Birthday Gift for you</p>
+        <div class="button-container">
+          <button class="magic-button" onclick="showLetters()">
+            <span>💌 Open When Letters</span>
+          </button>
+          <button class="magic-button" onclick="showJar()">
+            <span>🫙 22 Reasons Why</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Open When Letters Page -->
+      <div class="letters-page" id="lettersPage">
+        <button class="back-button" onclick="showLanding()">← Back</button>
+        <div class="page-header">
+          <h2 class="page-title">Open When... 💌</h2>
+          <p class="page-subtitle">Letters for whenever you need them</p>
+        </div>
+        <div class="letters-grid" id="lettersGrid"></div>
+      </div>
+
+      <!-- Jar of Reasons Page -->
+      <div class="jar-page" id="jarPage">
+        <button class="back-button" onclick="showLanding()">← Back</button>
+        <div class="jar-container">
+          <div class="page-header">
+            <h2 class="page-title">22 Reasons Why You're the Best!</h2>
+            <p class="jar-instruction">Click the jar to reveal a reason!!</p>
+          </div>
+
+          <div class="jar-visual" onclick="revealReason()">
+            <div class="jar-lid"></div>
+            <div class="jar-body">
+              <div class="jar-notes" id="jarNotes"></div>
+            </div>
+            <div class="jar-label">
+              <span id="jarCount">0</span> / 22 Discovered
+            </div>
+          </div>
+
+          <div class="reasons-grid" id="reasonsGrid"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div class="modal-header">
+          <div class="modal-emoji">💗</div>
+          <h3 class="modal-title" id="modalTitle"></h3>
+        </div>
+        <div class="modal-message" id="modalMessage"></div>
+      </div>
+    </div>
+
+    <script>
+      // ========== DATA ==========
+      const letters = [
+        {
+          title: "Open when you're stressed about exams",
+          message: `Hey bestie,
+
+I know right now everything feels overwhelming. The pages blur together, the concepts won't stick, and you're wondering if you'll ever get through this. But here's what I need you to remember:
+
+You've conquered every single exam that came before this. Every single one. Even the ones you thought you'd fail. Even the ones that made you cry. You got through them all.
+
+Stress is just your body's way of saying this matters to you. And it does matter. But you know what matters more? Your health. Your peace. Your well-being.
+
+Take a deep breath. Drink some water. Maybe take a 10-minute break. The information will still be there, but you'll absorb it better when you're calm.
+
+You're going to pass this. Not because it's easy, but because you're resilient. You always find a way.
+
+I believe in you, even when you don't believe in yourself.
+
+Love you 🩶`,
+        },
+        {
+          title: 'Open when you miss home',
+          message: `My dear friend,
+
+I know that ache in your chest. That feeling when you see something that reminds you of home, or when you wish you could just hug your family. Distance is hard, especially when you're already carrying so much.
+
+But remember why you're there. Remember what you're building. Every day away from home is a day closer to making them proud, to giving them the life they deserve, to becoming the person you're meant to be.
+
+Your family misses you too, but they're so proud of you. Can you imagine how they brag about you? "Our daughter, the future doctor." They beam with pride.
+
+Home will always be there. Your family's love travels across any distance. And soon enough, you'll be back in their arms, with so many stories to tell.
+
+Until then, carry them in your heart. You're not alone, even when you feel lonely.
+
+Sending you the biggest virtual hug 🫂`,
+        },
+        {
+          title: "Open when you're feeling lonely",
+          message: `Hey you,
+
+Loneliness is one of the hardest feelings, isn't it? Being surrounded by people but still feeling alone. Or being physically alone and the silence feels too loud.
+
+I want you to know that you are seen. You are valued. You are loved. Even from miles away, you matter to me every single day.
+
+Loneliness doesn't mean something is wrong with you. It doesn't mean you're not enough. Sometimes it just means you're human, and you're feeling the weight of all you're carrying.
+
+But you're never truly alone. I'm always here - a message, a call, a voice note away. Your family is thinking of you. Your friends care about you.
+
+And most importantly, you have yourself. You're your own best companion through this journey. Be kind to her. She's doing her best.
+
+This feeling will pass. Light always comes back.
+
+Always here for you 🩶`,
+        },
+        {
+          title: 'Open when you need motivation',
+          message: `LISTEN UP BESTIE!
+
+You are absolutely INCREDIBLE. Do you even realize what you're doing? You're studying MEDICINE in a foreign country, in languages you had to learn, away from everything comfortable and familiar.
+
+Most people wouldn't even dare to try what you're doing. But you? You just keep going. Day after day. Exam after exam. Year after year.
+
+You are STRONG. You are CAPABLE. You are DETERMINED.
+
+Remember why you started. Remember that little girl who had dreams. She's so proud of who you've become.
+
+Every difficult day is building your future. Every sacrifice is worth it. Every tear you've cried is watering the seeds of your success.
+
+You don't need motivation - you ARE motivation. You're proof that dedication and hard work pay off.
+
+Now get up, straighten that crown, and show this day who's boss.
+
+You've got this! 👑💪`,
+        },
+        {
+          title: 'Open when you accomplished something',
+          message: `YAAASSSS BESTIE! 🎉
+
+Look at you! Look at what you just did! I am SO incredibly proud of you!
+
+Whether it's passing an exam, finishing a rotation, making it through a tough day, or any other win - big or small - you did it! And that deserves to be celebrated!
+
+Take a moment to really feel this. Don't minimize it. Don't brush it off. You worked for this. You earned this.
+
+This is proof that all those hard days are worth it. This is evidence that you're exactly where you need to be, doing exactly what you're meant to do.
+
+Your parents would be beaming right now. Your family would be celebrating. And I'm over here doing a happy dance for you!
+
+Celebrate yourself. Treat yourself to something nice. Call someone you love and share the good news. You deserve all the joy this moment brings.
+
+Keep collecting these wins. They're building toward something beautiful.
+
+So so so proud of you! 🥳🩶✨`,
+        },
+        {
+          title: "Open when you're doubting yourself",
+          message: `Hey beautiful soul,
+
+I see you spiraling. I see those thoughts telling you you're not good enough, smart enough, strong enough. I see you comparing yourself to others and feeling like you're falling short.
+
+Stop. Breathe. Listen to me.
+
+You ARE enough. You've always been enough. Your worth isn't determined by grades, achievements, or other people's opinions. Your worth is inherent, unchangeable, absolute.
+
+Those doubts? They're liars. They're based on fear, not facts. The facts are:
+
+- You've made it this far when most people couldn't
+- You've overcome obstacles that would have broken others
+- You've stayed kind despite everything trying to harden you
+- You've kept going when giving up would have been easier
+
+Doubt is just growth in disguise. It means you care. It means you're pushing yourself. It means you're human.
+
+But don't let it dim your light. You are extraordinary, whether you feel it right now or not.
+
+I believe in you. Always have, always will.
+
+You're doing better than you think 🩶`,
+        },
+        {
+          title: 'Open when you need a laugh',
+          message: `Okay okay, emergency laugh supply coming right up! 😂
+
+Remember that time you... okay I can't actually write all our inside jokes here because they wouldn't make sense to anyone else, but YOU know which ones I mean!
+
+Can we talk about how you're literally studying to be a doctor but sometimes the simplest things confuse you? It's giving "book smart, street confused" energy and I love it 😭
+
+Also, remember when [insert funny memory here - you can fill this in!]? I still laugh thinking about it!
+
+But real talk - even in your most stressed, overwhelmed, tired moments, you somehow still manage to make me laugh. Your humor in the midst of chaos is *chef's kiss*
+
+So here's your reminder: Life is too short to be serious all the time. It's okay to laugh at yourself. It's okay to find joy in small, silly things. It's okay to be goofy sometimes.
+
+Take a break from being "responsible medical student" and just be "chaotic bestie who makes questionable decisions" for a bit. Both versions of you are perfect.
+
+Now go do something that makes you smile!
+
+Love you, you absolute weirdo 🤪🩶
+
+P.S. - Yes, I'm calling you a weirdo affectionately. It's a compliment in our friendship language!`,
+        },
+        {
+          title: "Open when you can't sleep",
+          message: `It's one of those nights, huh?
+
+The world is quiet, everyone else is sleeping, but your mind won't shut off. Maybe you're anxious about tomorrow. Maybe you're replaying today. Maybe you're just... awake.
+
+First: It's okay. Struggling with sleep doesn't make you broken. It makes you human. Especially with everything on your plate - your mind has a lot to process.
+
+Here's what I want you to try:
+
+1. Stop trying to force it. The pressure to sleep makes it harder. Accept that right now, you're awake. That's okay.
+
+2. This moment doesn't define tomorrow. You've functioned on little sleep before. You'll be okay.
+
+3. Think of peaceful things. Your favorite places. Happy memories. That time we talked for hours about absolutely nothing and everything at once.
+
+4. Remember: Your body is resting even if your mind isn't sleeping. Lying down with your eyes closed still helps.
+
+And hey, if you're reading this at 3 AM, just know I'd probably be awake talking to you if I could. You're not alone in the quiet darkness.
+
+The night will pass. Morning will come. And you'll get through tomorrow, sleep or no sleep.
+
+Rest now. Tomorrow can wait 🌙`,
+        },
+        {
+          title: "Open when you're feeling homesick",
+          message: `Oh bestie, I know this feeling hits different.
+
+It's not just missing home - it's missing the smell of your mom's cooking, the sound of your siblings laughing, your dad's presence, your own bed, the streets you grew up on. It's missing the version of yourself that exists when you're there.
+
+Homesickness is love with nowhere to go. And you have SO much love for your family. That's beautiful, even when it hurts.
+
+But here's what I need you to remember: You're not just away from home. You're building a future that will make home even better. You're creating opportunities for your siblings. You're making your parents' sacrifices worth it.
+
+Every hard day away from home is a gift to your future self and your family.
+
+And home isn't going anywhere. Your family's love isn't dependent on proximity. They're proud of you. They miss you too. But they know you're exactly where you need to be.
+
+Soon you'll be back. And that reunion will be so sweet because of this distance. The hugs will last longer. The time will feel more precious.
+
+Until then, carry home in your heart. You're still their daughter, their sister, even across the miles.
+
+Sending you so much love 🩶🏡`,
+        },
+        {
+          title: 'Open when you need reminding how strong you are',
+          message: `STOP EVERYTHING AND READ THIS CAREFULLY:
+
+You are one of the strongest people I know. Not because you don't struggle - but because you keep going despite the struggle.
+
+Strength isn't about never feeling pain. It's about feeling it and choosing to continue anyway.
+
+Look at what you've survived:
+- Being away from family for years
+- Studying in multiple languages you had to learn
+- Exam seasons that tested every limit
+- Moments of doubt, fear, loneliness
+- Days where you wanted to quit but didn't
+- Sacrificing your own desires for your family's future
+
+And you're STILL HERE. Still going. Still fighting. Still caring about others even while you're struggling.
+
+That's not weakness. That's warrior-level strength.
+
+You don't need to be perfect to be strong. You don't need to have it all together. Strength is messy and tired and sometimes tearful.
+
+But you? You're still standing. And that counts for everything.
+
+Never doubt your strength again. You're literally proof that humans are capable of incredible resilience.
+
+I see your strength even when you don't feel it 💪🩶
+
+Keep going, warrior. You're doing amazing.`,
+        },
+      ];
+
+      const reasons = [
+        "Your selflessness is unmatched - you always put others before yourself, even when you're struggling",
+        "You have the kindest heart I've ever encountered. Your empathy and compassion know no bounds",
+        "Your strength is inspiring - you've been through so much yet you keep going with grace",
+        "You're the most supportive friend anyone could ask for. You celebrate others' wins like they're your own",
+        'Your dedication to your family is beautiful. Everything you do, you do for them',
+        'You never give up, no matter how hard things get. Your resilience is incredible',
+        "You're always there at 3 AM when someone needs you. Your availability means everything",
+        'Your humility is rare - you do amazing things but never brag about them',
+        'You make everyone feel heard and valued. People feel safe opening up to you',
+        'Your work ethic is insane - you juggle med school, languages, being away from home, and still excel',
+        "You're genuine in a world of fake. What you see is what you get, and that's refreshing",
+        'You have this calm presence that makes people feel at peace, even in chaos',
+        "You're incredibly smart but never make others feel small. You lift people up instead",
+        "Your loyalty is unwavering. Once you care about someone, you're there for life",
+        'You notice the little things about people that others miss. You truly see them',
+        "You're patient with people's flaws and shortcomings. You give grace freely",
+        'You have the best sense of humor - you can make people laugh even in dark times',
+        "You're trustworthy beyond measure. Secrets are safe with you, always",
+        "You're adaptable - you've learned new languages, new cultures, new everything and thrived",
+        'You inspire people without even trying. Your journey motivates others to keep going',
+        "You're a beautiful soul inside and out. Your inner beauty radiates outward",
+        "You're my best friend, my constant, my person. And I'm so grateful you exist 🩶",
+      ];
+
+      // ========== STATE ==========
+      let revealedReasons = [];
+
+      // ========== INITIALIZATION ==========
+      document.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+        initializeLetters();
+        initializeJar();
+      });
+
+      // ========== PARTICLES ==========
+      function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.animationDuration = Math.random() * 3 + 2 + 's';
+          particle.style.animationDelay = Math.random() * 5 + 's';
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // ========== NAVIGATION ==========
+      function showLanding() {
+        document.getElementById('landingPage').style.display = 'flex';
+        document.getElementById('lettersPage').classList.remove('active');
+        document.getElementById('jarPage').classList.remove('active');
+      }
+
+      function showLetters() {
+        document.getElementById('landingPage').style.display = 'none';
+        document.getElementById('lettersPage').classList.add('active');
+        document.getElementById('jarPage').classList.remove('active');
+      }
+
+      function showJar() {
+        document.getElementById('landingPage').style.display = 'none';
+        document.getElementById('lettersPage').classList.remove('active');
+        document.getElementById('jarPage').classList.add('active');
+      }
+
+      // ========== LETTERS ==========
+      function initializeLetters() {
+        const grid = document.getElementById('lettersGrid');
+        letters.forEach((letter, index) => {
+          const card = document.createElement('div');
+          card.className = 'letter-card';
+          card.innerHTML = `
+                    <div class="letter-icon">💌</div>
+                    <div class="letter-title">${letter.title}</div>
+                `;
+          card.onclick = () => openLetter(letter);
+          grid.appendChild(card);
+        });
+      }
+
+      function openLetter(letter) {
+        document.getElementById('modalTitle').textContent = letter.title;
+        document.getElementById('modalMessage').textContent = letter.message;
+        document.getElementById('modal').classList.add('active');
+      }
+
+      // ========== JAR ==========
+      function initializeJar() {
+        const jarNotes = document.getElementById('jarNotes');
+        for (let i = 0; i < 22; i++) {
+          const note = document.createElement('div');
+          note.className = 'note-piece';
+          note.style.setProperty('--i', i);
+          jarNotes.appendChild(note);
+        }
+
+        const reasonsGrid = document.getElementById('reasonsGrid');
+        reasons.forEach((reason, index) => {
+          const card = document.createElement('div');
+          card.className = 'reason-card';
+          card.id = `reason-${index}`;
+          card.innerHTML = `
+                    <div class="reason-number">${
+                      index < revealedReasons.length ? '💗' : '🔒'
+                    }</div>
+                    <div class="reason-title">Reason #${index + 1}</div>
+                    <div class="reason-text">${reason}</div>
+                `;
+          card.onclick = () => {
+            if (revealedReasons.includes(index)) {
+              openReason(index);
+            }
+          };
+          reasonsGrid.appendChild(card);
+        });
+      }
+
+      function revealReason() {
+        const unrevealed = reasons
+          .map((_, index) => index)
+          .filter((index) => !revealedReasons.includes(index));
+
+        if (unrevealed.length === 0) {
+          showModal(
+            '🎉',
+            'All Discovered!',
+            "You've discovered all 22 reasons! You're absolutely amazing! 💗",
+          );
+          return;
+        }
+
+        const randomIndex =
+          unrevealed[Math.floor(Math.random() * unrevealed.length)];
+        revealedReasons.push(randomIndex);
+
+        const card = document.getElementById(`reason-${randomIndex}`);
+        card.classList.add('revealed');
+        card.querySelector('.reason-number').textContent = '💗';
+
+        document.getElementById('jarCount').textContent =
+          revealedReasons.length;
+
+        createConfetti();
+        openReason(randomIndex);
+      }
+
+      function openReason(index) {
+        showModal('💗', `Reason #${index + 1}`, reasons[index]);
+      }
+
+      // ========== MODAL ==========
+      function showModal(emoji, title, message) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalMessage').textContent = message;
+        document.querySelector('.modal-emoji').textContent = emoji;
+        document.getElementById('modal').classList.add('active');
+      }
+
+      function closeModal() {
+        document.getElementById('modal').classList.remove('active');
+      }
+
+      // Close modal on background click
+      document.getElementById('modal').onclick = (e) => {
+        if (e.target.id === 'modal') closeModal();
+      };
+
+      // ========== CONFETTI ==========
+      function createConfetti() {
+        const colors = ['#ff69b4', '#ff1493', '#ffc0cb', '#ffb6c1', '#c71585'];
+        for (let i = 0; i < 50; i++) {
+          const confetti = document.createElement('div');
+          confetti.className = 'confetti';
+          confetti.style.left = Math.random() * 100 + '%';
+          confetti.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.animationDelay = Math.random() * 0.5 + 's';
+          document.body.appendChild(confetti);
+          setTimeout(() => confetti.remove(), 3000);
+        }
+      }
+    </script>
+  </body>
+</html>
