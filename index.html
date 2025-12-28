@@ -55,16 +55,18 @@
       .intro-content {
         text-align: center;
         max-width: 800px;
+        width: 100%;
       }
 
       .intro-text {
-        font-size: clamp(2.5rem, 8vw, 5.5rem);
+        font-size: clamp(2rem, 8vw, 5.5rem);
         font-weight: 800;
         color: white;
         text-align: center;
         animation: scaleIn 1s ease-out;
         text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         margin-bottom: 1rem;
+        line-height: 1.1;
       }
 
       @keyframes scaleIn {
@@ -79,9 +81,10 @@
       }
 
       .intro-emoji {
-        font-size: 6rem;
+        font-size: clamp(3.5rem, 15vw, 6rem);
         animation: bounce 1.5s infinite alternate;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+        display: block;
       }
 
       @keyframes bounce {
@@ -89,25 +92,27 @@
           transform: translateY(0) scale(1);
         }
         to {
-          transform: translateY(-30px) scale(1.1);
+          transform: translateY(-20px) scale(1.1);
         }
       }
 
       .intro-message {
-        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        font-size: clamp(1rem, 3.5vw, 1.5rem);
         color: rgba(255, 255, 255, 0.95);
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
         animation: fadeInUp 1s 0.5s both;
         font-weight: 400;
+        padding: 0 1rem;
       }
 
       .intro-subtext {
-        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+        font-size: clamp(0.85rem, 3vw, 1.2rem);
         color: rgba(255, 255, 255, 0.85);
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         animation: fadeInUp 1s 0.8s both;
         font-style: italic;
+        padding: 0 1rem;
       }
 
       @keyframes fadeInUp {
@@ -122,8 +127,8 @@
       }
 
       .intro-button {
-        padding: 1.5rem 4rem;
-        font-size: 1.5rem;
+        padding: 1.3rem 3rem;
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
         font-weight: 700;
         color: white;
         background: linear-gradient(
@@ -141,6 +146,9 @@
         box-shadow: 0 15px 50px rgba(255, 20, 147, 0.5);
         animation: fadeInUp 1s 1.2s both, buttonPulse 2s 2s infinite;
         position: relative;
+        width: auto;
+        max-width: 90%;
+        font-family: 'Poppins', sans-serif;
       }
 
       @keyframes buttonPulse {
@@ -177,6 +185,10 @@
         background-position: 100% 0;
       }
 
+      .intro-button:active {
+        transform: translateY(-2px) scale(1.02);
+      }
+
       .intro-button span {
         position: relative;
         z-index: 1;
@@ -195,7 +207,7 @@
 
       .intro-heart {
         position: absolute;
-        font-size: 2rem;
+        font-size: clamp(1.2rem, 4vw, 2rem);
         animation: floatHeart 8s linear infinite;
         opacity: 0;
       }
@@ -218,6 +230,120 @@
         }
       }
 
+      /* Mobile-specific adjustments */
+      @media (max-width: 768px) {
+        .intro-scene {
+          padding: 1.5rem 1rem;
+        }
+
+        .intro-text {
+          font-size: clamp(1.8rem, 10vw, 3.5rem);
+          margin-bottom: 0.8rem;
+        }
+
+        .intro-emoji {
+          font-size: clamp(3rem, 20vw, 5rem);
+          margin-bottom: 1.2rem;
+        }
+
+        .intro-message {
+          font-size: clamp(0.95rem, 4.5vw, 1.3rem);
+          line-height: 1.5;
+          margin-bottom: 0.8rem;
+        }
+
+        .intro-subtext {
+          font-size: clamp(0.8rem, 3.5vw, 1.1rem);
+          margin-bottom: 1.8rem;
+        }
+
+        .intro-button {
+          padding: 1.2rem 2.5rem;
+          font-size: clamp(1rem, 4.5vw, 1.3rem);
+          max-width: 95%;
+        }
+
+        @keyframes bounce {
+          from {
+            transform: translateY(0) scale(1);
+          }
+          to {
+            transform: translateY(-15px) scale(1.08);
+          }
+        }
+      }
+
+      /* Extra small devices */
+      @media (max-width: 480px) {
+        .intro-scene {
+          padding: 1rem 0.8rem;
+        }
+
+        .intro-text {
+          font-size: clamp(1.5rem, 11vw, 2.8rem);
+        }
+
+        .intro-emoji {
+          font-size: clamp(2.5rem, 22vw, 4.5rem);
+          margin-bottom: 1rem;
+        }
+
+        .intro-message {
+          font-size: clamp(0.9rem, 5vw, 1.2rem);
+        }
+
+        .intro-subtext {
+          font-size: clamp(0.75rem, 4vw, 1rem);
+          margin-bottom: 1.5rem;
+        }
+
+        .intro-button {
+          padding: 1.1rem 2rem;
+          font-size: clamp(0.95rem, 5vw, 1.2rem);
+        }
+      }
+
+      /* Landscape mobile */
+      @media (max-height: 600px) and (orientation: landscape) {
+        .intro-scene {
+          padding: 1rem;
+        }
+
+        .intro-text {
+          font-size: clamp(1.5rem, 6vw, 2.5rem);
+          margin-bottom: 0.5rem;
+        }
+
+        .intro-emoji {
+          font-size: clamp(2rem, 8vw, 3rem);
+          margin-bottom: 0.8rem;
+        }
+
+        .intro-message {
+          font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+          line-height: 1.4;
+          margin-bottom: 0.5rem;
+        }
+
+        .intro-subtext {
+          font-size: clamp(0.75rem, 2vw, 0.95rem);
+          margin-bottom: 1rem;
+        }
+
+        .intro-button {
+          padding: 0.9rem 2rem;
+          font-size: clamp(0.9rem, 3vw, 1.1rem);
+        }
+
+        @keyframes bounce {
+          from {
+            transform: translateY(0) scale(1);
+          }
+          to {
+            transform: translateY(-10px) scale(1.05);
+          }
+        }
+      }
       /* ========== PARTICLES ========== */
       .particles {
         position: fixed;
@@ -970,11 +1096,14 @@
         <div class="intro-emoji">🎂</div>
         <div class="intro-text">Happy 22nd Birthday!!!</div>
         <p class="intro-message">
-          Another year older, another year wiser, and another year of being
-          absolutely amazing. Today is all about celebrating YOU and everything
-          that makes you special.
+          This year, I wanted to switch things up. I wanted anything I would do
+          to be about you and not center it around our friendship or how much
+          you mean to me (I think the wish already covers that). So I extended
+          your birthday website instead (since you love it) and added two
+          heartfelt gifts. I also tried to make it really girly... as you can
+          probably tell
         </p>
-        <p class="intro-subtext">It's not much but I made you something</p>
+        <p class="intro-subtext">It's not much but, I made you something 🩶</p>
         <button class="intro-button" onclick="proceedToMain()">
           <span>Let's Go!</span>
         </button>
@@ -990,8 +1119,8 @@
       <div class="landing-page" id="landingPage">
         <h1 class="main-title">Happy 22nd Birthday!!!</h1>
         <p class="subtitle">
-          Two special gifts for you: heartfelt letters for any moment & 22
-          reasons why you're undoubtably the best-est!
+          Here's Two special gifts for you: heartfelt letters for any moment &
+          22 reasons why you're undoubtably the best-est!
         </p>
         <div class="button-container">
           <button class="magic-button" onclick="showLetters()">
@@ -1062,11 +1191,11 @@ You've passed every single exam that came before this. Every single one. Even th
 
 Stress is just your body's way of saying this matters to you. And it does matter. But you know what matters more? Your health. Your peace. Your well-being.
 
-Take a deep breath. Drink some water. Maybe take a 10-minute break. The information will still be there, but you'll absorb it better when you're calm.
+Drink some water. Maybe take a 10-minute break. The information will still be there, but you'll absorb it better when you're calm.
 
-You're going to pass this. Not because it's easy, but because you're resilient. You always find a way.
+You're going to pass this. Not because it's easy, but because you're resilient. You always find a way. (Even if it means pulling an all-nighter or two.)
 
-I believe in you, even when you don't believe in yourself. Always.
+I believe in you, even when you don't believe in yourself. Always. You got this!!!
 
 Love you 🩶`,
         },
@@ -1104,7 +1233,7 @@ Always her, rooting, cheering, praying for you 🩶`,
           title: 'Open when you need motivation',
           message: `LISTEN UP BESTIE
 
-You are absolutely AMAZING. Do you even realize what you're doing? You're studying MEDICINE in a foreign country, away from everything comfortable and familiar.
+You are absolutely AMAZING. Do you even realize what you're doing? You're studying med in a foreign country, away from everything comfortable and familiar. (Even tho it's probably not that foreign to you anymore)
 
 Most people wouldn't even dare to try what you're doing. But you? You just keep going. Day after day. Exam after exam. Year after year.
 
@@ -1244,7 +1373,7 @@ Keep going, bestie. You're doing amazing. 🩶`,
         "Your strength is inspiring - you've been through so much yet you keep going with grace",
         "You're the most supportive friend anyone could ask for (the best too). You celebrate others' wins like they're your own",
         'Your love and dedication to your family is beautiful. Everything you do, you do for them',
-        'You never give up, no matter how hard things get. Your resilience is incredible',
+        'You never give up, no matter how hard things get. Your resilience is admirable',
         "You're always there when someone needs you. (Always have been whenever I needed you). You being there means everything",
         'Your humility is rare - you do amazing things but never brag about them (You should tho it is fine sometimes)',
         'You make everyone feel heard and valued. People feel safe opening up to you',
