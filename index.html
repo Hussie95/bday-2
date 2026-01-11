@@ -825,7 +825,7 @@
         position: relative;
         width: 100%;
         max-width: 400px;
-        height: 480px;
+        height: 400px;
         margin: 0 auto 6rem;
         cursor: pointer;
         animation: fadeInUp 1s 0.5s both;
@@ -835,6 +835,7 @@
         position: absolute;
         left: 50%;
         bottom: 0;
+
         transform: translateX(-50%);
         width: 300px;
         height: 350px;
@@ -862,6 +863,7 @@
       .jar-lid {
         position: absolute;
         left: 50%;
+        bottom: 320px;
         transform: translateX(-50%);
         width: 310px;
         height: 50px;
@@ -1087,7 +1089,7 @@
         }
 
         .jar-visual {
-          height: 450px;
+          height: 350px;
         }
 
         .jar-body {
@@ -1097,7 +1099,7 @@
 
         .jar-lid {
           width: 260px;
-          top: 64px;
+          bottom: 270px;
         }
 
         .jar-label {
@@ -1179,6 +1181,7 @@
 
           <div class="jar-visual" onclick="revealReason()">
             <div class="jar-lid"></div>
+            <!-- ← LID IS NOW HERE -->
             <div class="jar-body">
               <div class="jar-notes" id="jarNotes"></div>
             </div>
